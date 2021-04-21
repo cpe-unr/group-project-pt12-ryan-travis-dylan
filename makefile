@@ -1,12 +1,7 @@
 
-audio: main.cpp echo.o NoiseGate.o processor.o
-	g++ -std=c++11 main.cpp Echo.o NoiseGate.o Processor.o -o audioprocessor
-
-echo.o: Echo.cpp Echo.h
-	g++ -c -std=c++11 Echo.cpp 
-NoiseGate.o: NoiseGate.cpp NoiseGate.h
-	g++ -c -std=c++11 NoiseGate.cpp
-processor.o: Processor.cpp Processor.h
-	g++ -c -std=c++11 Processor.cpp
+audio: main.o
+	g++ -std=c++11 main.o -o audioprocessor
+main.o: main.cpp Echo.h NoiseGate.h Normalizer.h Processor.h
+	g++ -std=c++11 main.cpp -c
 clean:
 	rm *.o audioprocessor

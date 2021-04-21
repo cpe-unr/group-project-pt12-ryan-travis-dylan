@@ -1,6 +1,9 @@
 /** @file */
 #include <iostream>
-
+#include "Echo.h"
+#include "NoiseGate.h"
+#include "Normalizer.h"
+#include "Processor.h"
 /**
  * \brief   The function bar.
  *

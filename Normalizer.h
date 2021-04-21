@@ -12,11 +12,11 @@
 #include <cstdint>
 #include <cmath>
 
-class Normalizer: public Processor{
+template <typename B>
+class Normalizer: public Processor<B>{
 int threshold;
 public:
 	Normalizer(int threshold);
-	template <typename B>
    	void processBuffer(B* buffer,int bufferSize);
 };
 #endif
