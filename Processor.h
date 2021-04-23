@@ -5,7 +5,7 @@
 #ifndef PROCESSOR_H
 #define PROCESSOR_H
 
-
+#include <limits>
 #include <cstdint>
 #include <cmath>
 template <typename B>

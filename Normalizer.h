@@ -26,13 +26,10 @@ template <typename B>void Normalizer<B>::processBuffer(B* buffer,int bufferSize)
 		if(buffer[i]<max){
 			buffer[i] = max;
 		}
-	}
-	if(B == unsigned char){
-		buffer*(255/max);
-	}
-	if(B == signed int){
-		buffer*(max/32767);
+		buffer[i]*(max/std::numeric_limits<B>::max());
 	}
 
+}
+	
 
 #endif

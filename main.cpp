@@ -4,6 +4,10 @@
 #include "NoiseGate.h"
 #include "Normalizer.h"
 #include "Processor.h"
+#include "EchoStereo.h"
+#include "NoiseGateStereo.h"
+#include "NormalizerStereo.h"
+#include "ProcessorStereo.h"
 /**
  * \brief   The function bar.
  *
