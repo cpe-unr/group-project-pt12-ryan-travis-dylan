@@ -8,6 +8,9 @@
 #include <limits>
 #include <cstdint>
 #include <cmath>
+/**
+The templated interface for the mono processor.
+*/
 template <typename B>
 class Processor {
 public:

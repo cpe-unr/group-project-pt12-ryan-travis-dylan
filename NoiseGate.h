@@ -11,6 +11,9 @@
 #include <iostream>
 #include <cstdint>
 #include <cmath>
+/**
+This is the templated NoiseGate class for mono.
+*/
 
 template <typename B>
 class NoiseGate: public Processor<B>{
@@ -19,7 +22,16 @@ public:
 	NoiseGate(int threshold);
    	void processBuffer(B* buffer,int bufferSize);
 };
+/**
+This is the templated parameterized consuctor.
+@param threshold- this is the threshold of audio. 
+*/
 template <typename B> NoiseGate <B>::NoiseGate(int threshold): threshold(threshold){}
+/**
+This finds our zero point and then brings the audio within a certin range down or up to the zero point.
+@param buffer- Our read in wav file with all the information of the file.
+@param bufferSize - The size of the buffer that is used in our loops.
+*/ 
 template <typename B> void NoiseGate<B>::processBuffer(B* buffer, int bufferSize){
 	B zeroPoint;
 	zeroPoint = std::numeric_limits<B>::max();

@@ -8,6 +8,9 @@
 #include <limits>
 #include <cstdint>
 #include <cmath>
+/**
+The templated interface for the stereo processor.
+*/
 template <typename BS>
 class ProcessorStereo{
 public:
