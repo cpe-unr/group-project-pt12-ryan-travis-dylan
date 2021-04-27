@@ -1,5 +1,7 @@
 /** @file */
 #include <iostream>
+#include <string>
+#include <fstream>
 
 /**
  * \brief   The function bar.
@@ -25,7 +27,25 @@ void fn(){
 
 }
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+int main(int argc, char* argv[]) {
+    std::string line;
+
+	if(argc<2)
+	{
+		std::cout<<"No argument passed to program\n";
+		std::cout<<"Usage: "<<argv[0]<<"<filename>\n";
+	return 0;
+	}
+
+	std::ifstream is(argv[1]);
+	
+	if(is.is_open())
+	{
+		while(getline(is, line))
+			std::cout<<line<<std::endl;
+		is.close();
+	}
+	else
+		std::cout<<"Could not open file "<<argv[1]<<std::endl;
+	return 0;
 }
