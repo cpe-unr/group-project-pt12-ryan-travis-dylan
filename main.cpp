@@ -1,6 +1,7 @@
 /** @file */
 #include <iostream>
-#include "WavProcessorMono.h"
+#include "WavProcessor8.h"
+#include "WavProcessor16.h"
 
 /**
  * \brief   The function bar.
@@ -22,9 +23,6 @@
  * \retval        ERR_SUCCESS    The function is successfully executed
  * \retval        ERR_FAILURE    An error occurred
  */
-void fn(){
-
-}
 
 int main() {
     std::cout << "Hello, World!" << std::endl;

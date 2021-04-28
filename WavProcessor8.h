@@ -5,7 +5,7 @@
 #include "WavHeader.h"
 #include "InfoHeader.h"
 
-class WavProcessorMono : public WavParent<unsigned char>{
+class WavProcessor8 : public WavParent<unsigned char>{
 	int wav_size;
 	short format_size;
 	short num_channels;
@@ -17,9 +17,10 @@ class WavProcessorMono : public WavParent<unsigned char>{
 
 	wav_header waveHeader;
 	info_header infoHeader;
+	artist_header artistHeader;
 	unsigned char* buffer = NULL;
 public:
-	virtual ~WavProcessorMono();
+	virtual ~WavProcessor8();
 
 	void readFile(const string &fileName);
 	void writeFile(const string &outputFile);

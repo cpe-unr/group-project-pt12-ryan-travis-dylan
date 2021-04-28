@@ -11,10 +11,12 @@ typedef struct info_header {
 	//Title
 	char inam_header[4]; //"INAM"
 	int title_size; //Size of title
-	char title[title_size]; //Title
 
-	//Artist
-	char iart_header[4]; //"IART"
-	int artist_size; //Size of artist
-	char artist[artist_size]; //Artist
 } info_header;
+
+typedef struct artist_header {
+	char iart_header[4];
+	int artist_size;
+} artist_header;
+
+#endif
