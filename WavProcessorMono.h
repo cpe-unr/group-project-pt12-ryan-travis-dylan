@@ -26,4 +26,10 @@ public:
 
 	unsigned char *getBuffer();
 	int getBufferSize() const;
+
+	std::string getArtist();
+	void setArtist(std::string newArtist);
+
+	std::string getTitle();
+	void setTitle(std::string newTitle);
 };

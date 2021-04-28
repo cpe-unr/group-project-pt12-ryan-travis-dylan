@@ -1,5 +1,6 @@
 /** @file */
 #include <iostream>
+#include "WavProcessorMono.h"
 
 /**
  * \brief   The function bar.

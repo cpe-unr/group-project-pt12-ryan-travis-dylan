@@ -33,7 +33,7 @@ void WavProcessorMono::writeFile(const string &outputFile) {
     outFile.close();
 }
 
-WavProcessorMono::~Wav() {
+WavProcessorMono::~WavProcessorMono() {
     if(buffer != NULL)
         delete[] buffer;
 }
