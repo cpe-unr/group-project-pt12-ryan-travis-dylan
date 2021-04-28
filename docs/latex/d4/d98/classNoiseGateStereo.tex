@@ -1,0 +1,64 @@
+\hypertarget{classNoiseGateStereo}{}\section{Noise\+Gate\+Stereo$<$ BS $>$ Class Template Reference}
+\label{classNoiseGateStereo}\index{Noise\+Gate\+Stereo$<$ B\+S $>$@{Noise\+Gate\+Stereo$<$ B\+S $>$}}
+
+
+{\ttfamily \#include $<$Noise\+Gate\+Stereo.\+h$>$}
+
+
+
+Inheritance diagram for Noise\+Gate\+Stereo$<$ BS $>$\+:
+% FIG 0
+
+
+Collaboration diagram for Noise\+Gate\+Stereo$<$ BS $>$\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNoiseGateStereo_ae2e8a4417ebc375e6e20ac58446e3e52}{Noise\+Gate\+Stereo} (int threshold)
+\item 
+void \hyperlink{classNoiseGateStereo_a4b084863de9b3c138f4c1f8b30e70c6e}{process\+Buffer\+Stereo} (BS $\ast$buffer, int buffer\+Size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename BS$>$\newline
+class Noise\+Gate\+Stereo$<$ B\+S $>$}
+
+This is the templated \hyperlink{classNoiseGate}{Noise\+Gate} class for stereo. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNoiseGateStereo_ae2e8a4417ebc375e6e20ac58446e3e52}\label{classNoiseGateStereo_ae2e8a4417ebc375e6e20ac58446e3e52}} 
+\index{Noise\+Gate\+Stereo@{Noise\+Gate\+Stereo}!Noise\+Gate\+Stereo@{Noise\+Gate\+Stereo}}
+\index{Noise\+Gate\+Stereo@{Noise\+Gate\+Stereo}!Noise\+Gate\+Stereo@{Noise\+Gate\+Stereo}}
+\subsubsection{\texorpdfstring{Noise\+Gate\+Stereo()}{NoiseGateStereo()}}
+{\footnotesize\ttfamily template$<$typename BS $>$ \\
+\hyperlink{classNoiseGateStereo}{Noise\+Gate\+Stereo}$<$ BS $>$\+::\hyperlink{classNoiseGateStereo}{Noise\+Gate\+Stereo} (\begin{DoxyParamCaption}\item[{int}]{threshold }\end{DoxyParamCaption})}
+
+This is the templated parameterized consuctor. 
+\begin{DoxyParams}{Parameters}
+{\em threshold-\/} & this is the threshold of audio. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNoiseGateStereo_a4b084863de9b3c138f4c1f8b30e70c6e}\label{classNoiseGateStereo_a4b084863de9b3c138f4c1f8b30e70c6e}} 
+\index{Noise\+Gate\+Stereo@{Noise\+Gate\+Stereo}!process\+Buffer\+Stereo@{process\+Buffer\+Stereo}}
+\index{process\+Buffer\+Stereo@{process\+Buffer\+Stereo}!Noise\+Gate\+Stereo@{Noise\+Gate\+Stereo}}
+\subsubsection{\texorpdfstring{process\+Buffer\+Stereo()}{processBufferStereo()}}
+{\footnotesize\ttfamily template$<$typename BS $>$ \\
+void \hyperlink{classNoiseGateStereo}{Noise\+Gate\+Stereo}$<$ BS $>$\+::process\+Buffer\+Stereo (\begin{DoxyParamCaption}\item[{BS $\ast$}]{buffer,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})}
+
+This finds our zero point and then brings the audio within a certin range down or up to the zero point. 
+\begin{DoxyParams}{Parameters}
+{\em buffer-\/} & Our read in wav file with all the information of the file. \\
+\hline
+{\em buffer\+Size} & -\/ The size of the buffer that is used in our loops. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Noise\+Gate\+Stereo.\+h\end{DoxyCompactItemize}
