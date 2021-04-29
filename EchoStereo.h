@@ -27,12 +27,16 @@ This is the templated parameterized consuctor.
 */
 template <typename BS>EchoStereo<BS>::EchoStereo(int delay): delay(delay){}
 /**
-This takes out buffer and adds a delay that is given to produce a echo in the audio. 
+This takes out buffer and adds a delay that is given to produce a echo in the audio.
+It also makes sure the delay is divisable by 2 to deal with stereo audio and its 2 channels.  
 @param buffer- Our read in wav file with all the information of the file.
 @param bufferSize - The size of the buffer that is used in our loops.
 */ 
 template <typename BS>void EchoStereo<BS>::processBufferStereo(BS* buffer, int bufferSize){
 int i;
+	if((delay %2)!=0){
+		delay+1;
+	}
 	for(i=0; i<bufferSize; i++){
 		buffer[i] = buffer[i-delay]/3 + buffer[i];
 	}

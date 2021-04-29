@@ -18,14 +18,13 @@ template <typename BS>
 class NormalizerStereo: public ProcessorStereo<BS>{
 int threshold;
 public:
-	NormalizerStereo(int threshold);
+	NormalizerStereo();
    	void processBufferStereo(BS* buffer,int bufferSize);
 };
 /**
-This is the templated parameterized consuctor.
-@param threshold- this is the threshold of audio. 
+This is the templated consuctor.
 */
-template <typename BS>NormalizerStereo<BS>::NormalizerStereo(int threshold): threshold(threshold){}
+template <typename BS>NormalizerStereo<BS>::NormalizerStereo(){}
 /**
 This is what finds the max and then normalizes the audio for the file using the max.
 @param buffer- Our read in wav file with all the information of the file.
