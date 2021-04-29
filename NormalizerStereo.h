@@ -32,7 +32,7 @@ This is what finds the max and then normalizes the audio for the file using the 
 */ 
 template <typename BS>void NormalizerStereo<BS>::processBufferStereo(BS* buffer,int bufferSize){
 	int max=0;
-	for(int i=0; i<bufferSize; i++){
+	for(int i=0; i<bufferSize; i= i+2){
 		if(buffer[i]<max){
 			buffer[i] = max;
 		}

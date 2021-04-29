@@ -14,7 +14,7 @@ The templated interface for the mono processor.
 template <typename B>
 class Processor {
 public:
-    void processBuffer(B* buffer,int bufferSize);
+    void processBuffer(B* buffer,int bufferSize)=0;
 };
 
 

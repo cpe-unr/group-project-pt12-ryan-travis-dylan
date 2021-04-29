@@ -34,7 +34,7 @@ This finds our zero point and then brings the audio within a certin range down o
 template <typename BS> void NoiseGateStereo<BS>::processBufferStereo(BS* buffer, int bufferSize){
 	BS zeroPoint;
 	zeroPoint = std::numeric_limits<BS>::max();
-	for( int i=0; i<bufferSize; i++){
+	for( int i=0; i<bufferSize; i= i+2){
 		if(buffer[i] < (zeroPoint+5) && (buffer[i] > (zeroPoint-5))){
 			buffer[i] = zeroPoint;
 		}

@@ -37,7 +37,7 @@ int i;
 	if((delay %2)!=0){
 		delay+1;
 	}
-	for(i=0; i<bufferSize; i++){
+	for(i=0; i<bufferSize; i= i+2){
 		buffer[i] = buffer[i-delay]/3 + buffer[i];
 	}
 }
