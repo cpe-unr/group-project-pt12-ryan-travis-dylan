@@ -36,6 +36,7 @@ const std::string echofile = "echos.wav";
 const std::string normalfile = "normal.wav";
 const std::string noisefile = "noise.wav";
 int main() {
+/**
     WavProcessor8 wav;
     wav.readFile(testfile);
     Processor *processor = new Echo(10);
@@ -107,4 +108,5 @@ WavProcessor16 wav;
     ProcessorStereo *gateStereo = new NoiseGateStereo(10);
     gateStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
     wav.writeFile(noisefile);
+**/
 }
