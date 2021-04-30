@@ -46,7 +46,12 @@ while(input != "1" && input != "2" && input != "3"){
 	 	 <<"[3] Noise Gate\n";
 	std::getline(std::cin, input);
 	}
-if(choice == 1){
+if(input == 1){
+	std::cout<<"Mono or Stereo? \n";
+	std::string input;
+	std::getline(std::cin, input);
+	if(input == "Mono"){
+
 	WavProcessor8 wav;
     wav.readFile(testfile);
     Echo<unsigned char> *processor = new Echo<unsigned char> (10);
@@ -58,6 +63,8 @@ if(choice == 1){
     Echo<short> *processor2 = new Echo<short>(10);
     processor2->processBuffer(wav2.getBuffer(),wav2.getBufferSize());
     wav2.writeFile(echofile);
+}
+	if(input == "Stereo"){
 
 	WavProcessor8 wav3;
     wav3.readFile(testfile);
@@ -70,8 +77,13 @@ if(choice == 1){
     EchoStereo<short> *processorStereo2 = new EchoStereo<short>(10);
     processorStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
     wav4.writeFile(echofile);	
-}
-else if(choice == 2){
+}}
+else if(input == 2){
+	std::cout<<"Mono or Stereo? \n";
+	std::string input;
+	std::getline(std::cin, input);
+	if(input == "Mono"){
+
 	wav.readFile(testfile);
     Normalizer<unsigned char> *normal = new Normalizer<unsigned char> ();
     normal->processBuffer(wav.getBuffer(),wav.getBufferSize());
@@ -81,6 +93,8 @@ else if(choice == 2){
     Normalizer<short> *normal2 = new Normalizer<short>();
     normal2->processBuffer(wav2.getBuffer(),wav2.getBufferSize());
     wav2.writeFile(normalfile);
+}
+	if(input == "Stereo"){
 
 	wav3.readFile(testfile);
     NormalizerStereo<unsigned char> *normalStereo = new NormalizerStereo<unsigned char>();
@@ -91,8 +105,13 @@ else if(choice == 2){
     NormalizerStereo<short> *normalStereo2 = new NormalizerStereo<short>();
     normalStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
     wav4.writeFile(normalfile);
-}
-else if(choice == 3){
+}}
+else if(input == 3){
+	std::cout<<"Mono or Stereo? \n";
+	std::string input;
+	std::getline(std::cin, input);
+	if(input == "Mono"){
+
 	 wav.readFile(testfile);
     NoiseGate<unsigned char> *gate = new NoiseGate<unsigned char> (10);
     gate->processBuffer(wav.getBuffer(),wav.getBufferSize());
@@ -102,6 +121,8 @@ else if(choice == 3){
     NoiseGate<short> *gate2 = new NoiseGate<short>(10);
     gate2->processBuffer(wav2.getBuffer(),wav2.getBufferSize());
     wav2.writeFile(noisefile);
+}
+	if(input == "Stereo"){
 
 	wav3.readFile(testfile);
     NoiseGateStereo<unsigned char> *gateStereo = new NoiseGateStereo<unsigned char>(10);
@@ -112,4 +133,4 @@ else if(choice == 3){
     NoiseGateStereo<short> *gateStereo2 = new NoiseGateStereo<short>(10);
     gateStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
     wav4.writeFile(noisefile);
-}
+}}
