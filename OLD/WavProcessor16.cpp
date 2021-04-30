@@ -8,7 +8,7 @@ using namespace std;
 void WavProcessor16::readFile(const string &fileName) {
     ifstream file(fileName, ios::binary | ios::in);
 
-    char titleC[99], artistC[99];
+    char titleC[99], artistC[99], info[4];
 
     if(file.is_open()){
 
@@ -17,15 +17,24 @@ void WavProcessor16::readFile(const string &fileName) {
         buffer = new unsigned char[waveHeader.data_bytes];
         file.read((char*)buffer, waveHeader.data_bytes);
 
-        file.read((char*)&infoHeader, sizeof(info_header));
-        file.read(titleC, reinterpret_cast<int>(infoHeader.title_size));
+        file.read((char*)&waveHeader, sizeof(wav_header));
 
-        file.read((char*)&artistHeader, sizeof(artist_header));
-        file.read(artistC, reinterpret_cast<int>(artistHeader.artist_size));
+        buffer = new unsigned char[waveHeader.data_bytes];
+        file.read((char*)buffer, waveHeader.data_bytes);
 
-        title = titleC;
-        artist = artistC;
+        if(file.read(info, 4) = "INFO"){
+            file.read((char*)&infoHeader, sizeof(info_header));
+            file.read(titleC, reinterpret_cast<int>(infoHeader.title_size));
 
+            file.read((char*)&artistHeader, sizeof(artist_header));
+            file.read(artistC, reinterpret_cast<int>(artistHeader.artist_size));
+
+            title = titleC;
+            artist = artistC;
+        }
+        else{
+            contains_metadata = false;
+       }
         file.close();
     }
 }

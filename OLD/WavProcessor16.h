@@ -5,32 +5,38 @@
 #include "WavHeader.h"
 #include "InfoHeader.h"
 
-class WavProcessor8 : public WavParent<unsigned char>{
-	int wav_size;
-	short format_size;
+class WavProcessor16 : public WavParent{
+
+	short audio_format;
 	short num_channels;
 	int sample_rate;
 	int byte_rate;
-	short bit_depth;
+	bool contains_metadata;
+
 	std::string title;
 	std::string artist;
 
 	wav_header waveHeader;
 	info_header infoHeader;
 	artist_header artistHeader;
+
 	unsigned char* buffer = NULL;
 public:
-	virtual ~WavProcessor8();
+	virtual ~WavProcessor16();
 
 	void readFile(const string &fileName);
 	void writeFile(const string &outputFile);
 
-	unsigned char *getBuffer();
+	short *getBuffer();
 	int getBufferSize() const;
 
-	std::string getArtist();
+	std::string getArtist() const;
 	void setArtist(std::string newArtist);
 
-	std::string getTitle();
+	std::string getTitle() const;
 	void setTitle(std::string newTitle);
+
+	std::string getMode() const;
+
+	int getSampleRate() const;
 };

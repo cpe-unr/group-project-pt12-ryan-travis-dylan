@@ -26,5 +26,8 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
+
+    Wav wav;
+    wav.readFile(fileName);
     return 0;
 }
