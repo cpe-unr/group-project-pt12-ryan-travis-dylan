@@ -44,10 +44,10 @@ template <typename BS>void NormalizerStereo<BS>::processBufferStereo(BS* buffer,
 		}
 	}
 	for(int i=0; i<bufferSize;i= i+2){
-		buffer[i]*(leftmax/std::numeric_limits<BS>::leftmax());
+		buffer[i]*(leftmax/std::numeric_limits<BS>::max());
 	}
 	for(int i=0; i<bufferSize;i= i+2){
-		buffer[i]*(rightmax/std::numeric_limits<BS>::rightmax());
+		buffer[i]*(rightmax/std::numeric_limits<BS>::max());
 	}
 
 }

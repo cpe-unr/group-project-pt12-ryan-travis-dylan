@@ -14,7 +14,7 @@ The templated interface for the stereo processor.
 template <typename BS>
 class ProcessorStereo{
 public:
-    void processBufferStereo(BS* buffer,int bufferSize)=0;
+    void processBufferStereo(BS* buffer,int bufferSize);
 };
 
 

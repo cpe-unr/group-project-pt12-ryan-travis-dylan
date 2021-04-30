@@ -1,11 +1,8 @@
 /** @file */
 #include <iostream>
-
+#include <string>
 #include "WavProcessor8.h"
 #include "WavProcessor16.h"
-
-
-/*
 #include "Echo.h"
 #include "NoiseGate.h"
 #include "Normalizer.h"
@@ -14,7 +11,6 @@
 #include "NoiseGateStereo.h"
 #include "NormalizerStereo.h"
 #include "ProcessorStereo.h"
-*/
 
 /**
  * \brief   The function bar.
@@ -37,89 +33,84 @@
  * \retval        ERR_FAILURE    An error occurred
  */
 
-
-=======
 void fn(){
 
 }
-/*
 const std::string testfile = "testing.wav";
 const std::string echofile = "echos.wav";
 const std::string normalfile = "normal.wav";
 const std::string noisefile = "noise.wav";
-*/
 int main() {
-/**
+
     WavProcessor8 wav;
     wav.readFile(testfile);
-    Processor *processor = new Echo(10);
+    Echo<unsigned char> *processor = new Echo<unsigned char> (10);
     processor->processBuffer(wav.getBuffer(),wav.getBufferSize());
     wav.writeFile(echofile);
 
- 
     wav.readFile(testfile);
-    Processor *normal = new Normalizer();
+    Normalizer<unsigned char> *normal = new Normalizer<unsigned char> ();
     normal->processBuffer(wav.getBuffer(),wav.getBufferSize());
     wav.writeFile(normalfile);
 
 
     wav.readFile(testfile);
-    Processor *gate = new NoiseGate(10);
+    NoiseGate<unsigned char> *gate = new NoiseGate<unsigned char> (10);
     gate->processBuffer(wav.getBuffer(),wav.getBufferSize());
     wav.writeFile(noisefile);
  
-WavProcessor16 wav;
-    wav.readFile(testfile);
-    Processor *processor = new Echo(10);
-    processor->processBuffer(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(echofile);
+WavProcessor16 wav2;
+    wav2.readFile(testfile);
+    Echo<short> *processor2 = new Echo<short>(10);
+    processor2->processBuffer(wav2.getBuffer(),wav2.getBufferSize());
+    wav2.writeFile(echofile);
 
  
-    wav.readFile(testfile);
-    Processor *normal = new Normalizer();
-    normal->processBuffer(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(normalfile);
+    wav2.readFile(testfile);
+    Normalizer<short> *normal2 = new Normalizer<short>();
+    normal2->processBuffer(wav2.getBuffer(),wav2.getBufferSize());
+    wav2.writeFile(normalfile);
 
 
-    wav.readFile(testfile);
-    Processor *gate = new NoiseGate(10);
-    gate->processBuffer(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(noisefile);
+    wav2.readFile(testfile);
+    NoiseGate<short> *gate2 = new NoiseGate<short>(10);
+    gate2->processBuffer(wav2.getBuffer(),wav2.getBufferSize());
+    wav2.writeFile(noisefile);
 
- WavProcessor8 wav;
-    wav.readFile(testfile);
-    ProcessorStereo *processorStereo = new EchoStereo(10);
-    processorStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(echofile);
-
- 
-    wav.readFile(testfile);
-    ProcessorStereo *normalStereo = new NormalizerStereo();
-    normalStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(normalfile);
-
-
-    wav.readFile(testfile);
-    ProcessorStereo *gateStereo = new NoiseGateStereo(10);
-    gateStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(noisefile);
- 
-WavProcessor16 wav;
-    wav.readFile(testfile);
-    ProcessorStereo *processorStereo = new Echo(10);
-    processorStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(echofile);
+ WavProcessor8 wav3;
+    wav3.readFile(testfile);
+    EchoStereo<unsigned char> *processorStereo = new EchoStereo<unsigned char>(10);
+    processorStereo->processBufferStereo(wav3.getBuffer(),wav3.getBufferSize());
+    wav3.writeFile(echofile);
 
  
-    wav.readFile(testfile);
-    ProcessorStereo *normalStereo = new NormalizerStereo();
-    normalStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(normalfile);
+    wav3.readFile(testfile);
+    NormalizerStereo<unsigned char> *normalStereo = new NormalizerStereo<unsigned char>();
+    normalStereo->processBufferStereo(wav3.getBuffer(),wav3.getBufferSize());
+    wav3.writeFile(normalfile);
 
 
-    wav.readFile(testfile);
-    ProcessorStereo *gateStereo = new NoiseGateStereo(10);
-    gateStereo->processBufferStereo(wav.getBuffer(),wav.getBufferSize());
-    wav.writeFile(noisefile);
-**/
+    wav3.readFile(testfile);
+    NoiseGateStereo<unsigned char> *gateStereo = new NoiseGateStereo<unsigned char>(10);
+    gateStereo->processBufferStereo(wav3.getBuffer(),wav3.getBufferSize());
+    wav3.writeFile(noisefile);
+ 
+WavProcessor16 wav4;
+    wav4.readFile(testfile);
+    EchoStereo<short> *processorStereo2 = new EchoStereo<short>(10);
+    processorStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
+    wav4.writeFile(echofile);
+
+ 
+    wav4.readFile(testfile);
+    NormalizerStereo<short> *normalStereo2 = new NormalizerStereo<short>();
+    normalStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
+    wav4.writeFile(normalfile);
+
+
+    wav4.readFile(testfile);
+    NoiseGateStereo<short> *gateStereo2 = new NoiseGateStereo<short>(10);
+    gateStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
+    wav4.writeFile(noisefile);
+
 }
