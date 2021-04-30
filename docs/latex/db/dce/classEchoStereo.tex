@@ -1,0 +1,64 @@
+\hypertarget{classEchoStereo}{}\section{Echo\+Stereo$<$ BS $>$ Class Template Reference}
+\label{classEchoStereo}\index{Echo\+Stereo$<$ B\+S $>$@{Echo\+Stereo$<$ B\+S $>$}}
+
+
+{\ttfamily \#include $<$Echo\+Stereo.\+h$>$}
+
+
+
+Inheritance diagram for Echo\+Stereo$<$ BS $>$\+:
+% FIG 0
+
+
+Collaboration diagram for Echo\+Stereo$<$ BS $>$\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEchoStereo_abee01097db3de683f2b6dbc82c7194f9}{Echo\+Stereo} (int delay)
+\item 
+void \hyperlink{classEchoStereo_a1b3ab691e0a48056f116d555a2fb969d}{process\+Buffer\+Stereo} (BS $\ast$buffer, int buffer\+Size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename BS$>$\newline
+class Echo\+Stereo$<$ B\+S $>$}
+
+This is the templated \hyperlink{classEcho}{Echo} class for stereo. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEchoStereo_abee01097db3de683f2b6dbc82c7194f9}\label{classEchoStereo_abee01097db3de683f2b6dbc82c7194f9}} 
+\index{Echo\+Stereo@{Echo\+Stereo}!Echo\+Stereo@{Echo\+Stereo}}
+\index{Echo\+Stereo@{Echo\+Stereo}!Echo\+Stereo@{Echo\+Stereo}}
+\subsubsection{\texorpdfstring{Echo\+Stereo()}{EchoStereo()}}
+{\footnotesize\ttfamily template$<$typename BS $>$ \\
+\hyperlink{classEchoStereo}{Echo\+Stereo}$<$ BS $>$\+::\hyperlink{classEchoStereo}{Echo\+Stereo} (\begin{DoxyParamCaption}\item[{int}]{delay }\end{DoxyParamCaption})}
+
+This is the templated parameterized consuctor. 
+\begin{DoxyParams}{Parameters}
+{\em delay-\/} & this is the delay that is used to decide how long the echo is. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEchoStereo_a1b3ab691e0a48056f116d555a2fb969d}\label{classEchoStereo_a1b3ab691e0a48056f116d555a2fb969d}} 
+\index{Echo\+Stereo@{Echo\+Stereo}!process\+Buffer\+Stereo@{process\+Buffer\+Stereo}}
+\index{process\+Buffer\+Stereo@{process\+Buffer\+Stereo}!Echo\+Stereo@{Echo\+Stereo}}
+\subsubsection{\texorpdfstring{process\+Buffer\+Stereo()}{processBufferStereo()}}
+{\footnotesize\ttfamily template$<$typename BS $>$ \\
+void \hyperlink{classEchoStereo}{Echo\+Stereo}$<$ BS $>$\+::process\+Buffer\+Stereo (\begin{DoxyParamCaption}\item[{BS $\ast$}]{buffer,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})}
+
+This takes out buffer and adds a delay that is given to produce a echo in the audio. It also makes sure the delay is divisable by 2 to deal with stereo audio and its 2 channels. 
+\begin{DoxyParams}{Parameters}
+{\em buffer-\/} & Our read in wav file with all the information of the file. \\
+\hline
+{\em buffer\+Size} & -\/ The size of the buffer that is used in our loops. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Echo\+Stereo.\+h\end{DoxyCompactItemize}
