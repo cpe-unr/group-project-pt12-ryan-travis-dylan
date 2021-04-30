@@ -4,9 +4,11 @@
 #include <fstream>
 #include <iostream>
 
+#include "Wav.h"
+
 class WavHeaderProcessor : public Wav{
-protected:
-	void processHeader(ifstream openFile);
+public:
+	void processHeader(std::ifstream openFile);
 };
 
 #endif

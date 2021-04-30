@@ -3,16 +3,16 @@
 
 #include "WavStructure.h"
 
-template <typename B, typename M>
 class Wav{
 	wav_structure wavData;
-	B* buffer = NULL;
+
 public:
 	//Reading Functions
 	void readFile(const std::string &fileName);
 
-    M getMetadata(const std::string &param);
-    B* getBuffer();
+    auto getMetadata(std::string param);
+    auto getBuffer();
+
     int getBufferSize() const;
 
     //Writing Functions

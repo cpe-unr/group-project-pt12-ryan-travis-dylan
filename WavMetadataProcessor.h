@@ -4,9 +4,11 @@
 #include <fstream>
 #include <iostream>
 
+#include "Wav.h"
+
 class WavMetadataProcessor : public Wav{
 protected:
-	void processMetadata(ifstream openFile);
+	void processMetadata(std::ifstream openFile);
 };
 
 #endif

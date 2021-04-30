@@ -4,13 +4,15 @@
 #include <fstream>
 #include <iostream>
 
+#include "Wav.h"
+
 class WavDataProcessor16 : public Wav{
 protected:
-    void processData16(ifstream openFile, int bufferSize);
+    void processData16(std::ifstream openFile);
     short* getBuffer16();
 
 public:
-    virtual ~WavDataProcessor8();
+    virtual ~WavDataProcessor16();
 };
 
 #endif

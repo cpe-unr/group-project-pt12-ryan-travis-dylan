@@ -4,10 +4,12 @@
 #include <fstream>
 #include <iostream>
 
+#include "Wav.h"
+
 class WavDataProcessor8 : public Wav{
 protected:
 
-	void processData8(ifstream openFile);
+	void processData8(std::ifstream openFile);
 	unsigned char* getBuffer8();
 
 public:
