@@ -7,8 +7,8 @@
 #include "Wav.h"
 
 class WavMetadataProcessor : public Wav{
-protected:
-	void processMetadata(std::ifstream openFile);
+public:
+	void processMetadata(std::ifstream &openFile);
 };
 
 #endif

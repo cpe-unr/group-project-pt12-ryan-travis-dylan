@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void WavDataProcessor16::processData16(ifstream openFile){
+void WavDataProcessor16::processData16(ifstream &openFile){
 
 	int seekPos = wavData.wav_size - wavData.data_bytes;
 	openFile.seekg(seekPos, openFile.beg);

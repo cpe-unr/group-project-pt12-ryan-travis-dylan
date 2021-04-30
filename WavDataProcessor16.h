@@ -7,11 +7,11 @@
 #include "Wav.h"
 
 class WavDataProcessor16 : public Wav{
-protected:
-    void processData16(std::ifstream openFile);
+	unsigned char* buffer = NULL;
+public:
+    void processData16(std::ifstream &openFile);
     short* getBuffer16();
 
-public:
     virtual ~WavDataProcessor16();
 };
 

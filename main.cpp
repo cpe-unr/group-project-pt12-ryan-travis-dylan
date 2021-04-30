@@ -1,8 +1,14 @@
 /** @file */
 #include <iostream>
-#include "WavProcessor8.h"
-#include "WavProcessor16.h"
 
+#include "WavStructure.h"
+#include "WavHeaderProcessor.h"
+#include "WavDataProcessor8.h"
+#include "WavDataProcessor16.h"
+#include "WavMetadataProcessor.h"
+#include "Wav.h"
+
+const std::string testfile = "test.wav";
 /**
  * \brief   The function bar.
  *
@@ -28,6 +34,9 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
 
     Wav wav;
-    wav.readFile(fileName);
+    wav.readFile(testfile);
+
+    std::string artist = wav.getMetadata(23);
+    std::cout << "Artist: " << artist << std::endl;
     return 0;
 }

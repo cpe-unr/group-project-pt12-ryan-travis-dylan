@@ -8,7 +8,7 @@
 
 class WavHeaderProcessor : public Wav{
 public:
-	void processHeader(std::ifstream openFile);
+	void processHeader(std::ifstream &openFile);
 };
 
 #endif

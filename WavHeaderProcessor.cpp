@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void WavHeaderProcessor::processHeader(ifstream openFile){
+void WavHeaderProcessor::processHeader(ifstream &openFile){
 
 	//Read each individual entry into wavData entry
 	//RIFF chunk
