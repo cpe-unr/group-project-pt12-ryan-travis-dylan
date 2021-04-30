@@ -1,5 +1,11 @@
 /** @file */
 #include <iostream>
+
+#include "WavProcessor8.h"
+#include "WavProcessor16.h"
+
+
+/*
 #include "Echo.h"
 #include "NoiseGate.h"
 #include "Normalizer.h"
@@ -8,6 +14,8 @@
 #include "NoiseGateStereo.h"
 #include "NormalizerStereo.h"
 #include "ProcessorStereo.h"
+*/
+
 /**
  * \brief   The function bar.
  *
@@ -28,13 +36,18 @@
  * \retval        ERR_SUCCESS    The function is successfully executed
  * \retval        ERR_FAILURE    An error occurred
  */
+
+
+=======
 void fn(){
 
 }
+/*
 const std::string testfile = "testing.wav";
 const std::string echofile = "echos.wav";
 const std::string normalfile = "normal.wav";
 const std::string noisefile = "noise.wav";
+*/
 int main() {
 /**
     WavProcessor8 wav;
