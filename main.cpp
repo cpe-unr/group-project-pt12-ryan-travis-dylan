@@ -36,7 +36,6 @@ int main() {
     Wav wav;
     wav.readFile(testfile);
 
-    std::string artist = wav.getMetadata(23);
-    std::cout << "Artist: " << artist << std::endl;
+    std::cout << "Artist: " << wav.getBufferSize << std::endl;
     return 0;
 }

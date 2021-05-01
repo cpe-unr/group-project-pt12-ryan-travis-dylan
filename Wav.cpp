@@ -1,6 +1,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 #include "Wav.h"
 #include "WavHeaderProcessor.h"
@@ -43,8 +44,7 @@ void Wav::readFile(const std::string &fileName){
 
 }
 
-template <typename B>
-B Wav::getBuffer(){
+auto Wav::getBuffer(){
 	if(wavData.sample_rate == 8){
 
 		WavDataProcessor8* data = new WavDataProcessor8();
@@ -65,6 +65,53 @@ B Wav::getBuffer(){
 
 int Wav::getBufferSize() const{
     return wavData.data_bytes;
+}
+
+vector<string> getMetadata(){
+	//Create vector of all data contained in WAV file, searchable by going to specific pos in vector
+
+	vector<string> container;
+
+	//RIFF
+	container.push_back(wavData.riff_header);
+	container.push_back(to_string(wavData.wav_size));
+	container.push_back(wavData.wave_header);
+
+	//FMT
+	container.push_back(wavData.fmt_header);
+	container.push_back(to_string(wavData.fmt_chunk_size));
+	container.push_back(to_string(wavData.audio_format));
+	container.push_back(to_string(wavData.num_channels));
+	container.push_back(to_string(wavData.sample_rate));
+	container.push_back(to_string(wavData.byte_rate));
+	container.push_back(to_string(wavData.sample_alignment));
+	container.push_back(to_string(wavData.bit_depth));
+
+	//DATA
+	container.push_back(wavData.data_header);
+	container.push_back(to_string(wavData.data_bytes));
+
+	//FLAG (local)
+	container.push_back(to_string(wavData.contains_metadata));
+
+	if(wavData.contains_metadata == 1){
+		//LIST
+		container.push_back(wavData.list_header);
+		container.push_back(to_string(wavData.list_size));
+		container.push_back(wavData.info_header);
+
+		//Title
+		container.push_back(wavData.inam_header);
+		container.push_back(to_string(wavData.title_size));
+		container.push_back(wavData.title);
+
+		//Artist
+		container.push_back(wavData.iart_header);
+		container.push_back(to_string(wavData.artist_size));
+		container.push_back(wavData.artist);
+	}
+
+	return container;
 }
 
 
