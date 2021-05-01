@@ -44,25 +44,6 @@ void Wav::readFile(const std::string &fileName){
 
 }
 
-auto Wav::getBuffer(){
-	if(wavData.sample_rate == 8){
-
-		WavDataProcessor8* data = new WavDataProcessor8();
-		unsigned char* buffer = data->getBuffer8();
-		delete[] data;
-		return buffer;
-	}
-
-	if(wavData.sample_rate == 16){
-
-		WavDataProcessor16* data = new WavDataProcessor16();
-		short* buffer = data->getBuffer16();
-		delete[] data;
-		return buffer;
-
-	}
-}
-
 int Wav::getBufferSize() const{
     return wavData.data_bytes;
 }
