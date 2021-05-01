@@ -14,10 +14,12 @@ using namespace std;
 void Wav::readFile(const std::string &fileName){
 
 	ifstream file(fileName, ios::binary | ios::in);
+	cout << "read";
 
 	if(file.is_open()){
 
 		WavHeaderProcessor* header = new WavHeaderProcessor();
+		cout << "opened";
 		header->processHeader(file);
 		delete[] header;
 
@@ -44,11 +46,32 @@ void Wav::readFile(const std::string &fileName){
 
 }
 
-int Wav::getBufferSize() const{
+int Wav::getBufferSize(){
     return wavData.data_bytes;
 }
 
-vector<string> getMetadata(){
+int Wav::getSampleRate(){
+	return wavData.sample_rate;
+}
+
+unsigned char* Wav::getBuffer8(){
+    WavDataProcessor8* data = new WavDataProcessor8();
+    unsigned char* buffer = data->getBuffer8();
+    delete[] data;
+    return buffer;
+ 
+}
+
+short* Wav::getBuffer16(){
+
+    WavDataProcessor16* data = new WavDataProcessor16();
+    short* buffer = data->getBuffer16();
+    delete[] data;
+    return buffer;
+
+}
+
+vector<string> Wav::getMetadata(){
 	//Create vector of all data contained in WAV file, searchable by going to specific pos in vector
 
 	vector<string> container;

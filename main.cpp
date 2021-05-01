@@ -36,6 +36,6 @@ int main() {
     Wav wav;
     wav.readFile(testfile);
 
-    std::cout << "Artist: " << wav.getBufferSize << std::endl;
+    //std::cout << "Artist: " << wav.getBufferSize() << std::endl;
     return 0;
 }
