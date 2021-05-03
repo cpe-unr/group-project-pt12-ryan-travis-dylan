@@ -5,6 +5,10 @@
 #include <cmath>
 #include <limits>
 
+/**
+This is where we open a file a create it to have everything needed. It turns it into a csv file and later closes the file after all the information is settled.
+*/
+
 using namespace std;
 
 void CSV::outputCSV(string OUTPUT, string CSVFile1, string CSVFile2, string CSVFile3, string CSVFile4){

@@ -26,7 +26,9 @@
 void fn(){
 
 }
-
+/**
+This is the first user interaction that occurs, where the user chooses if they want the file processed using echo, normilization, or  using noise gate.
+*/
 using namespace std;
 
 std::cout<<"Choose one processor to process a file (1,2, or 3): \n";
@@ -36,7 +38,9 @@ std::cout<<"[1] Echo\n"
 
 std::string input;
 std::getline(std::cin, input);
-
+/**
+This is what happens when the user chooses an option and if an option is valid or not.
+*/
 while(input != "1" && input != "2" && input != "3"){
 	std::cout<<"Option is invalid"\n;
 
@@ -46,6 +50,9 @@ while(input != "1" && input != "2" && input != "3"){
 	 	 <<"[3] Noise Gate\n";
 	std::getline(std::cin, input);
 	}
+/**
+This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the echo function.
+*/
 if(input == 1){
 	std::cout<<"Mono or Stereo? \n";
 	std::string input;
@@ -78,6 +85,9 @@ if(input == 1){
     processorStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
     wav4.writeFile(echofile);	
 }}
+/**
+This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the normalization function.
+*/
 else if(input == 2){
 	std::cout<<"Mono or Stereo? \n";
 	std::string input;
@@ -106,6 +116,9 @@ else if(input == 2){
     normalStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
     wav4.writeFile(normalfile);
 }}
+/**
+This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the noise gate function.
+*/
 else if(input == 3){
 	std::cout<<"Mono or Stereo? \n";
 	std::string input;
