@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+Read the file if it's 8-bit sample rate
+@param fileName - Input file to be read
+*/
 void WavProcessor8::readFile(const string &fileName) {
     ifstream file(fileName, ios::binary | ios::in);
 
@@ -30,13 +34,19 @@ void WavProcessor8::readFile(const string &fileName) {
     }
 }
 
-
-unsigned char *WavProcessor8::getBuffer(){
+/**
+Return the buffer of an 8-bit file, as an unsigned char.
+*/
+unsigned char *WavProcessor8::getBuffer8(){
     return buffer;
 }
 
+/**
+Write a new file with the modified changes
+@param outputFile - Output file to be written
+*/
 void WavProcessor8::writeFile(const string &outputFile) {
-    std::ofstream outFile(outputFile, ios::out | ios::binary);
+    ofstream outFile(outputFile, ios::out | ios::binary);
 
     outFile.write((char*)&waveHeader, sizeof(wav_header));
 
@@ -56,6 +66,9 @@ WavProcessor8::~WavProcessor8() {
         delete[] buffer;
 }
 
+/**
+Get the size of the input buffer
+*/
 int WavProcessor8::getBufferSize() const {
     return waveHeader.data_bytes;
 }

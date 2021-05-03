@@ -5,7 +5,7 @@
 #include "WavHeader.h"
 #include "InfoHeader.h"
 
-class WavProcessor16 : public WavParent<short>{
+class WavProcessor16 : public WavParent{
 	int wav_size;
 	short format_size;
 	short num_channels;
@@ -25,7 +25,7 @@ public:
 	void readFile(const string &fileName);
 	void writeFile(const string &outputFile);
 
-	short *getBuffer();
+	short *getBuffer16();
 	int getBufferSize() const;
 
 	std::string getArtist();

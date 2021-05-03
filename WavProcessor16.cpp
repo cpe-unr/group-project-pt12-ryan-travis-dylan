@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+Read the file if it's 16-bit sample rate
+@param fileName - Input file to be read
+*/
 void WavProcessor16::readFile(const string &fileName) {
     ifstream file(fileName, ios::binary | ios::in);
 
@@ -31,11 +35,18 @@ void WavProcessor16::readFile(const string &fileName) {
 }
 
 
-short *WavProcessor16::getBuffer(){
+/**
+Return the buffer of an 16-bit file, as an short.
+*/
+short *WavProcessor16::getBuffer16(){
     short* shortBuffer = reinterpret_cast<short*>(buffer);
     return shortBuffer;
 }
 
+/**
+Write a new file with the modified changes
+@param outputFile - Output file to be written
+*/
 void WavProcessor16::writeFile(const string &outputFile) {
     std::ofstream outFile(outputFile, ios::out | ios::binary);
 
@@ -57,6 +68,9 @@ WavProcessor16::~WavProcessor16() {
         delete[] buffer;
 }
 
+/**
+Get the size of the input buffer
+*/
 int WavProcessor16::getBufferSize() const {
     return waveHeader.data_bytes;
 }

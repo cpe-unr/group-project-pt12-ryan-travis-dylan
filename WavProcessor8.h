@@ -25,7 +25,7 @@ public:
 	void readFile(const string &fileName);
 	void writeFile(const string &outputFile);
 
-	unsigned char *getBuffer();
+	unsigned char *getBuffer8();
 	int getBufferSize() const;
 
 	std::string getArtist();
