@@ -1,5 +1,5 @@
-test: main.cpp Wav.o WavHeaderProcessor.o WavDataProcessor8.o WavDataProcessor16.o WavMetadataProcessor.o WavStructure.h
-	g++ main.cpp Wav.o WavHeaderProcessor.o WavDataProcessor8.o WavDataProcessor16.o WavMetadataProcessor.o -o test
+audio: main.cpp Wav.o WavHeaderProcessor.o WavDataProcessor8.o WavDataProcessor16.o WavMetadataProcessor.o WavStructure.h
+	g++ main.cpp Wav.o WavHeaderProcessor.o WavDataProcessor8.o WavDataProcessor16.o WavMetadataProcessor.o -o audio
 
 Wav.o: Wav.cpp Wav.h
 	g++ -c Wav.cpp
@@ -18,4 +18,5 @@ WavMetadataProcessor.o: WavMetadataProcessor.cpp WavMetadataProcessor.h
 
 clean:
 	rm *.o
-	rm test
+	rm audio
+
