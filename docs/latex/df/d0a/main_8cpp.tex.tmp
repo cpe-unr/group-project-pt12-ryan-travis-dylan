@@ -1,0 +1,60 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Wav\+Structure.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wav\+Header\+Processor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wav\+Data\+Processor8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wav\+Data\+Processor16.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wav\+Metadata\+Processor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wav.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Echo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Noise\+Gate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Normalizer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Processor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Echo\+Stereo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Noise\+Gate\+Stereo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Normalizer\+Stereo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Processor\+Stereo.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a6f099837ea61cd01280a1ae9af519c08}\label{main_8cpp_a6f099837ea61cd01280a1ae9af519c08}} 
+const std\+::string {\bfseries testfile} = \char`\"{}testing.\+wav\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a20d3c071b06a2591f8ad4dfb4bd3eff6}\label{main_8cpp_a20d3c071b06a2591f8ad4dfb4bd3eff6}} 
+const std\+::string {\bfseries echofile} = \char`\"{}echos.\+wav\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a5eb3962cd5c054c40a38f4a96ff62c5b}\label{main_8cpp_a5eb3962cd5c054c40a38f4a96ff62c5b}} 
+const std\+::string {\bfseries normalfile} = \char`\"{}normal.\+wav\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_ae2c11d1cfe623abbf31a18f98458f5c0}\label{main_8cpp_ae2c11d1cfe623abbf31a18f98458f5c0}} 
+const std\+::string {\bfseries noisefile} = \char`\"{}noise.\+wav\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the first user interaction that occurs, where the user chooses if they want the file processed using echo, normilization, or using noise gate.
+
+This is what happens when the user chooses an option and if an option is valid or not.
+
+This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the echo function.
+
+This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the normalization function.
+
+This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the noise gate function.
