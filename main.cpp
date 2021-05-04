@@ -2,7 +2,14 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "WavStructure.h"
+#include "WavHeaderProcessor.h"
+#include "WavDataProcessor8.h"
+#include "WavDataProcessor16.h"
+#include "WavMetadataProcessor.h"
+#include "Wav.h"
 
+const std::string testfile = "test.wav";
 /**
  * \brief   The function bar.
  *
@@ -25,7 +32,8 @@
  */
 void fn(){
 
-}
+<
+int main() {
 /**
 This is the first user interaction that occurs, where the user chooses if they want the file processed using echo, normilization, or  using noise gate.
 */
@@ -147,3 +155,4 @@ else if(input == 3){
     gateStereo2->processBufferStereo(wav4.getBuffer(),wav4.getBufferSize());
     wav4.writeFile(noisefile);
 }}
+
