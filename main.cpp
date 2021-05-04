@@ -1,6 +1,7 @@
 /** @file */
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <fstream>
 #include "WavStructure.h"
 #include "WavHeaderProcessor.h"
@@ -32,12 +33,15 @@ std::cout<<"[1] Echo\n"
 	 <<"[2] Normilization\n"
 	 <<"[3] Noise Gate\n";
 
-int input=0;
+std::string input;
+std::stringstream in;
+int inputs =0;
+in>>inputs;
 std::getline(std::cin, input);
 /**
 This is what happens when the user chooses an option and if an option is valid or not.
 */
-while(input != "1" && input != "2" && input != "3"){
+while(inputs != '1' && inputs != '2' && inputs != '3'){
 	std::cout<<"Option is invalid"<<std::endl;
 
 	std::cout<<"Choose one processor to process a file (1,2, or 3): \n";
@@ -49,7 +53,7 @@ while(input != "1" && input != "2" && input != "3"){
 /**
 This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the echo function.
 */
-if(input == 1){
+if(inputs == 1){
 	std::cout<<"Mono or Stereo? "<<std::endl;
 	std::string input;
 	std::getline(std::cin, input);
@@ -84,7 +88,7 @@ WavDataProcessor8 wav;
 /**
 This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the normalization function.
 */
-else if(input == 2){
+else if(inputs == 2){
 	std::cout<<"Mono or Stereo? \n";
 	std::string input;
 	std::getline(std::cin, input);
@@ -117,7 +121,7 @@ WavDataProcessor16 wav4;
 /**
 This is where the user chooses if they want mono or stereo inside their previous choice made earlier. This particular choice is used for the noise gate function.
 */
-else if(input == 3){
+else if(inputs == 3){
 	std::cout<<"Mono or Stereo? \n";
 	std::string input;
 	std::getline(std::cin, input);
